@@ -1,0 +1,21 @@
+<ion-nav-view>
+	
+  <ion-content ng-controller="AppCtrl">
+    <div class="row">
+		<span class="col">Nombre</span>
+		<span class="col">Descuento</span>
+		<span class="col">Fecha</span>
+		<span class="col">Tienda</span>
+	</div>
+	<ion-list>
+		<a href="infocupon.html">
+		<ion-item class="row" ng-repeat="cupon in cupones | orderBy : ordenCupones"
+		ng-click="detallesCupon({{$index}})">
+		  <div class="col">{{cupon.name | limitTo:13}}</div>
+		  <div class="col red">- {{cupon.discount_v | currency : preferencias_money}}</div>
+		  <div class="col">{{cupon.due_date | date: shortDate}}</div>
+		  <div class="col">{{cupon.store_id | limitTo:13}}</div></a>
+		</ion-item>
+  	</ion-list>
+  </ion-content>
+</ion-nav-view>

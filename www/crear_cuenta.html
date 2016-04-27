@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+      <!--librerias para la conexión con facebook-->
+      <script src="js/openfb.js"></script>
+      <script src="js/ngopenfb.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  <body  ng-app="starter" ng-controller="AppCtrl">
+      <ion-content style=" background-image: url(img/fondo_inicial.png)">
+        <form ng-submit='createUser()'>
+          <center>
+
+          <br>
+          <img src="img/CrearCuenta.png" class="logoCuenta">
+          
+          </center>
+          <br>
+          <span class="center" style="color:#fff;">Nombre</span><br>
+          <input type="text"
+                 class="text input"
+                 ng-model="create.name"
+                 name="name" 
+                 required="true">
+          <br>
+          
+          <span class="center" style="color:#fff;">Correo electrónico</span><br>
+          <input type="email"
+                 class="email input"
+                 ng-model="create.email"
+                 name="email" 
+                 required="true">
+          <br>
+          <span class="center" style="color:#fff;">Contraseña</span><br>
+          <input type="password"
+                 class="pass input"
+                 ng-model="create.pass"
+                 name="pass" 
+                 required="true">
+          
+          <br>
+          <span class="center" style="color:#fff;">Repetir contraseña</span><br>
+          <input type="password"
+                 class="passr input"
+                  name="pass2" 
+                 ng-model="create.pass2"
+                 required="true">
+          
+          <br>
+          <span class="center" style="color:#fff;">Género</span><br>
+          <center>
+          <div class="item item-select" style="width: 80%">
+          <select class="col col-100"
+                 ng-model="create.gender"
+                 name="gender"
+                 required="true">
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+            </select>
+            </div>
+          </center>
+          <button class="button button-index " style="margin-top: 20px" >
+           Crear cuenta
+          </button>
+          <br>
+          
+          <center><div align="center"
+                    ng-model="model_progress"
+                    ng-show="model_progress" 
+                    style="width: 70%">
+            <progress>
+          </div></center>
+          <a href="index.html" class="linkitem">
+              <button class="button button-cuenta button-clear button-light" >
+                Cancelar
+              </button>
+          </a>
+      </form>
+    </ion-content>
+  </body>
+</html>

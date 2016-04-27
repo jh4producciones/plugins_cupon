@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+      <!--librerias para la conexión con facebook-->
+      <script src="js/openfb.js"></script>
+      <script src="js/ngopenfb.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  <body class="fondo" align="center">
+      <br><br><br><br>
+      <label style="color:#fff;">Código</label><br>
+      <input type="text"
+             class="code input">
+      <br>
+      
+      <p style="color:#FFF;">Ingresa el código que fue enviado<br>a tu dirección de correo.</p>
+      <br><br><br>
+      <a href="#" class="linkitem">
+          <button class="button button-index">
+           Continuar
+          </button>
+      </a>
+      <br>
+      <a href="index.html" class="linkitem">
+          <button class="button button-cuenta button-clear button-light">
+            Cancelar
+          </button>
+      </a>
+  </body>
+</html>

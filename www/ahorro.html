@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+      <!--librerias para la conexión con facebook-->
+      <script src="js/openfb.js"></script>
+      <script src="js/ngopenfb.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  <body ng-app="starter" ng-controller="AppCtrl">
+      <div class="bar bar-header bar-orange">
+        <a class="button icon-left ion-ios-arrow-thin-left button-clear" style="color:#fff;" href="principal.html"></a>
+        <h1 class="title" style="color:#FFF;">Mi Ahorro</h1>
+      </div>
+     <ion-pane style="background-color:#5BC0BE">
+      <ion-content style="text-align: center;">
+          <br><br><br><br><br>
+          <h1 style="color:#FFF;">
+            <br><br><br>
+              - {{ahorroTotal() | currency : preferencias_money}}
+          </h1>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

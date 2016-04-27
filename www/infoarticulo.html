@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+      <!--librerias para la conexión con facebook-->
+      <script src="js/openfb.js"></script>
+      <script src="js/ngopenfb.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  <body ng-app="starter" ng-controller="AppCtrl">
+      <div class="bar bar-header bar-orange">
+        <a class="button icon-left ion-ios-arrow-thin-left button-clear" style="color:#fff;" href="principal.html"></a>
+        <h1 class="title" style="color:#FFF;">Detalles de Producto</h1>
+      </div>
+     <ion-pane style="background-color:#5BC0BE">
+      <ion-content style="text-align: center;">
+          <br><br><br><br>
+               <div class="list form ">
+                    <label class="item item-input consult row">
+                        <span class="input-label col col-20" ><img src="img/DetallesArt_1.png" class="icononuevo"></span>
+                        <span class="input-label dato col">{{articulos[detalleArticulo].name}}</span>
+                    </label>
+                    <label class="item item-input consult row">
+                        <span class="input-label col col-20"><img src="img/DetallesArt_2.png" class="icononuevo"></span>
+                        <span class="input-label dato col">{{articulos[detalleArticulo].price | currency : preferencias_money}}</span>
+                    </label>
+                    <label class="item item-input consult row">
+                        <span class="input-label col col-20"><img src="img/DetallesArt_3.png" class="icononuevo"></span>
+                        <span class="input-label dato col">{{articulos[detalleArticulo].store_id}}</span>
+                    </label>
+                    <label class="item item-input consult row">
+                        <span class="input-label col col-20"><img src="img/DetallesArt_4.png" class="icononuevo"></span>
+                        <span class="input-label dato col">{{articulos[detalleArticulo].category}}</span>
+                    </label>
+                    <label class="item item-input consult row">
+                        <span class="input-label col col-20"><img src="img/DetallesArt_5.png" class="icononuevo"></span>
+                        <span class="input-label dato col">{{articulos[detalleArticulo].brand}}</span>
+                    </label>
+                    
+                   
+                    <label class="item item-input consult row"
+                    ng-show="{{!articulos[detalleArticulo].cupon}}">
+                        <span class="input-label col col-20"><img src="img/Detalles_7.png" class="icononuevo"></span>
+                         <span class="input-label dato col">No tiene cupón</span>    
+                     </label>
+                     <label class="item item-input consult row"
+                      ng-show="{{!articulos[detalleArticulo].cupon}}">
+                        <span class="input-label col col-20"><img src="img/Detalles_8.png" class="icononuevo"></span>
+                         <span class="input-label dato col">Asignar:</span>  
+                         <!--<select class="col col-60"
+                              ng-model="select_cupon_article"
+                              ng-show="!cupon.usado"
+                              
+                              ng-options="cupon as cupon.name for cupon in cupones"
+                              >
+                         </select>  -->
+                         <select class="col col-60" ng-model="select_cupon_article">
+                           <option ng-repeat="cupon in cuponesValidos() | filter" value="{{cupon.pos}}">{{cupon.name}}</option>
+                         </select>
+                     </label>
+                    
+                    <a href="mislistascompras.html">
+                      <button class="button guardar2" style="margin-top:20px"
+                      ng-show="{{!articulos[detalleArticulo].cupon}}"
+                      ng-click="asignarCuponArticulo(select_cupon_article)"
+                      >Guardar</button>
+                    </a>
+                    
+                    <!-- Boton de eliminar -->
+                    <button class="button button-index"
+                    style="margin-top: 20px" ng-click="eliminarArticulo()">Eliminar</button>
+                </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

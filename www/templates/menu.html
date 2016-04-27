@@ -1,0 +1,86 @@
+<ion-side-menus enable-menu-with-back-views="false" ng-controller="AppCtrl">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-orange">
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="color:#FFF;">
+        </button>
+      </ion-nav-buttons>
+        
+     <ion-nav-buttons side="right">
+        <img src="img/CouponMain_1.png" style="height:30px; width:30px;">
+      </ion-nav-buttons>
+    
+    </ion-nav-bar>
+    <div class="bar bar-orange bar-subheader row">
+        <a href="preferencias.html" class="col col-60">
+          <button class="button button-clear" style="color:#FFF;">{{name_prefe}}</button>
+        </a>
+        <button class="button button-clear col "
+        style="margin-left:10px">
+          <img src="img/CouponButton_2.png" style="width:25px; height:25px;">
+        </button>
+        <span class="col">{{articulos.length}}</span>
+        <button class="button button-clear col "
+        >
+          <img src="img/CouponMain_3.png" style="width:25px; height:25px;">
+        </button>
+        <span class="col">{{cupones.length}}</span>
+    </div>
+    
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+    
+    
+    
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-img">
+      <img src="img/menu-{{preferencias_genero}}.png" class="imgmenu">
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close href="nuevocupon.html" class="prim">
+          <img src="img/CouponMenu_1.png" style="width:18px; height:18px; margin-right:30px;">Nuevo cupón
+        </ion-item>
+        <ion-item href="nuevoarticulos.html">
+          <img src="img/CouponMenu_4.png" style="width:18px; height:18px; margin-right:30px;">Nuevo Producto
+        </ion-item>
+        <!--<ion-item href="nuevalista.html">
+          <img src="img/CouponMenu_9.png" style="width:18px; height:18px; margin-right:30px;">Nueva Lista
+        </ion-item>-->
+        <ion-item href="articulos.html">
+          <img src="img/CouponMenu_5.png" style="width:18px; height:18px; margin-right:30px;">Mis Productos
+        </ion-item>
+
+
+          <!--ion-item menu-close href="#/app/profile">
+              <img src="img/CouponMenu_6.png" style="width:18px; height:18px; margin-right:30px;">Perfil
+          </ion-item-->
+          <ion-item href="mistarjetas.html">
+              <img src="img/tarjeta.png" style="width:18px; height:18px; margin-right:30px;">Mis tarjetas
+          </ion-item>
+
+        <ion-item href="miscupones.html">
+          <img src="img/CouponMenu_6.png" style="width:18px; height:18px; margin-right:30px;">Mis Cupones
+        </ion-item>
+        <ion-item href="mislistascompras.html">
+          <img src="img/CouponMenu_7.png" style="width:18px; height:18px; margin-right:30px;">Mis listas de compras
+        </ion-item>
+        <ion-item href="ahorro.html">
+          <img src="img/NuevoCuponManual_10.png" style="width:18px; height:18px; margin-right:30px;">Mi ahorro
+        </ion-item>
+        <ion-item href="preferencias.html">
+          <img src="img/CouponMenu_8.png" style="width:18px; height:18px; margin-right:30px;">Preferencias
+        </ion-item>
+        <!--
+         <ion-item ui-sref="app.login">
+          <img src="img/CouponMenu_8.png" style="width:18px; height:18px; margin-right:30px;">Login
+        </ion-item>-->
+    <!--
+        <ion-item href="about.html">
+           <b class="about">About</b>
+        </ion-item>-->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

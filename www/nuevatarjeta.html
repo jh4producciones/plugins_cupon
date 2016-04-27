@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <!--librerias para la conexión con facebook-->
+    <script src="js/openfb.js"></script>
+    <script src="js/ngopenfb.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-app="starter">
+
+<ion-pane>
+    <ion-content ng-controller="AppCtrl">
+        <div class="bar bar-header orange">
+            <a class="button icon-left ion-ios-arrow-thin-left button-clear" style="color:#fff;" href="principal.html"></a>
+            <h1 class="title">Nueva tarjeta</h1>
+        </div>
+        <br><br>
+        <img src="img/NuevoCupon_img.png" class="img">
+        <div class="list">
+            <a href="" ng-click="leerCodigo()" class="item item-icon-left" style="color:#FFF;">
+                <p align="center" style="color:#FFF; font-size:19px;">
+                    <img src="img/NuevoCupon_1.png" class="icono">
+                    Escanear tarjeta</p>
+            </a>
+
+            <a class="item item-icon-left" href="tarjeta.html" style="color:#FFF;">
+                <p  align="center" style="color:#FFF; font-size:19px;">
+                    <img src="img/NuevoCupon_2.png" class="icono">
+                    Añadir manualmente</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-pane>
+</body>
+</html>

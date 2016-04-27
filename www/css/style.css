@@ -1,0 +1,264 @@
+/* Empty. Add your own CSS if you like */
+.bannerGril{
+    margin-left: -60px;
+    margin-top: 50px;
+}
+
+.guardar{
+    width:80%;
+}
+
+.guardar2{
+    width:80%;
+    background-color: #FC9E4F;
+    color: #FFF;
+}
+
+.eliminar{
+    width:100%;
+    background-color: #FC9E4F;
+    color: #FFF;
+}
+.fondo{
+    /**background: url(../img/fondo_inicial.png);**/
+    width: auto;
+}
+
+.icononuevo{
+   width: 25px;
+   height: 25px;
+}
+
+.form{
+    width:80%;
+    margin-left: 10%;
+}
+.cerrar{
+    background-color: #d8d8d8;
+    color:#0ea8fa;
+     width:80%;
+}
+
+.cupon::-webkit-input-placeholder {
+  color: #000000;
+}
+.cupon:-moz-placeholder {
+  color: #000000;
+}
+.cupon:-ms-input-placeholder {
+  color: #000000;
+}
+.cupon[placeholder] {
+  color: #000000;
+}
+
+
+.gender{
+    color:#fff;
+}
+
+.bar-orange{
+    background-color: #FC9E4F;
+    color: #FFF;
+    border-bottom-color: #FC9E4F;
+}
+.bar-img{
+    height: 160px;
+}
+.imgmenu{
+    margin:-10px;
+    width: 107%;
+    height: 114%;
+}
+
+.dato{
+    color:#fff;
+    text-align: left;
+}
+
+.select{
+    width: 70%;
+}
+
+.consult{
+    background-color:#5BC0BE;
+}
+
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #000;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }
+
+.prim{
+    margin-top: 120px;
+}
+
+.logoCuenta{
+    width: 100px;
+    height: 100px;
+}
+
+.menuhome{
+    background-color: #5BC0BE;
+    color:#FFF;
+    border-bottom-color: #5BC0BE;
+}
+
+.couponbutton{
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.about{
+    margin-left:50px;
+}
+
+.panel{
+    margin-top: 50px;
+    margin-left: 50%,
+}
+
+.icrea{
+    width: 40%;
+    height: 40%;
+}
+
+.linkitem{
+     text-decoration:none;  
+}
+
+input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+input:-moz-placeholder {
+  color: #ffffff;
+}
+input:-ms-input-placeholder {
+  color: #ffffff;
+}
+input[placeholder] {
+  color: #ffffff;
+}
+
+.email{
+    background: url("../img/Inicio_1.png") no-repeat 5px;
+    text-align:center;
+}
+
+.code{
+    background: url("../img/OlvidoCont_2.png") no-repeat 5px;
+    text-align:center;
+}
+
+
+.text{
+    background: url("../img/CrearCuenta_1.png") no-repeat 5px;
+    text-align:center;
+}
+
+.pass{
+    background: url("../img/Inicio_2.png") no-repeat 5px;
+    text-align:center;
+}
+
+.passr{
+    background: url("../img/CrearCuenta_4.png") no-repeat 5px;
+    text-align:center;
+}
+
+.input{
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 5px;  
+    background-color:#fdae99;
+    border: 2px solid;
+    border-color:#fff; 
+}
+
+.button-index{
+    background-color: #FFF;
+    color:orangered;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: block;
+}
+
+.button-face{
+    background: #3F51B5;
+    color: #FFF;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: block;
+}
+
+.logo{
+    width:300px;
+    margin:2% 0%;
+}
+
+.button-cuenta{
+    color:#fff;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: block;
+}
+
+.icreafooterindex{
+    margin-left: 50%;
+    display: block;
+}
+
+.iconofooter{
+    width:25px;
+    height: 25px;
+}
+
+.icono1{
+    margin-left:5%;
+    margin-right: 5%;
+}
+
+.icono2{
+    margin-right: 2%;
+}
+
+.icono3{
+    margin-right: 2%;
+}
+
+.icono4{
+    margin-right: 2%;
+}
+
+.icono5{
+    margin-right: 2%;
+}
+
+.icono6{
+    margin-right: 2%;
+}
+
+a{
+	text-decoration:none;   
+}
+
+.red{
+	color:#01DF01;
+}
+
+.center{
+	align-content : center;
+	margin-left:10%;
+}
+
+

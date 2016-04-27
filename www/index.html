@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+
+      <!--librerias para la conexión con facebook-->
+      <script src="js/openfb.js"></script>
+      <script src="js/ngopenfb.js"></script>
+
+
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+      <script src="js/controllers.js"></script>
+  </head>
+
+  <body ng-app="starter" ng-controller="AppCtrl">
+      <ion-content style=" background-image: url(img/fondo_inicial.png)">
+      <center>
+       <img src="img/CupomaniaLogo.png" style="margin-top: 100px" class="logo"><br><br>
+      </center>
+
+        <form ng-submit="loginUser()"> 
+          <span class="center" style="color:#fff;">Correo electrónico</span>
+       <br>
+          <input type="email"
+                 class="email input"
+                 ng-model="login.email"
+                 name="email" 
+                 required = "true">
+          <br>
+          <label class="center" style="color:#fff;">Contraseña</label><br>
+          <input type="password"
+                 class="pass input"
+                 ng-model="login.pass"
+                 name="pass" 
+                 required = "true">
+          
+          <br>
+              <button class="button button-index">
+               Iniciar sesión
+              </button>
+
+<br>
+                <button class="button button-index button-positive" ng-click="fbLogin()">
+                    <i class="ion-social-facebook"> Login with Facebook</i>
+                </button>
+
+
+            </label>
+          </form>
+          <center><div align="center"
+                    ng-model="model_progress"
+                    ng-show="model_progress" 
+                    style="width: 70%">
+            <progress>
+          </div></center>
+          <br>
+           <!--<a href="#" class="linkitem">
+              <button class="button button-face icon ion-social-facebook">
+                &nbsp;&nbsp;&nbsp;&nbsp;Ingresar con Facebook
+              </button>
+          </a>-->
+          <br>
+          <a href="crear_cuenta2.html" class="linkitem">
+              <button class="button button-cuenta button-clear button-light">
+                Crear cuenta
+              </button>
+          </a>
+            <a href="principal.html" class="linkitem">
+              <button class="button button-cuenta button-clear button-light" style="font-size:12px;">
+                Olvidé mi contraseña
+              </button>
+          </a>
+          <br>
+    </ion-content>
+  </body>
+</html>

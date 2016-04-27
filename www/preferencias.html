@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+      <!--librerias para la conexión con facebook-->
+      <script src="js/openfb.js"></script>
+      <script src="js/ngopenfb.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  
+  <body ng-app="starter">
+      <div class="bar bar-header bar-orange">
+        <a class="button icon-left ion-ios-arrow-thin-left button-clear" style="color:#fff;" href="principal.html"></a>
+        <h1 class="title" style="color:#FFF;">Preferencias</h1>
+      </div>
+      <ion-content ng-controller="AppCtrl">
+          <div class="item">
+            <br><br>
+                <form ng-submit="guardarPreferencias()">
+                    
+               <div class="list">
+                    <label class="item item-input row">
+                        <span class="input-label
+                        col col-10">
+                          <img src="img/Preferencias_1.png" class="icononuevo">
+                        </span>
+                        <input type="text"
+                               placeholder="{{preferencias_name}}"
+                               ng-model="name_prefe"
+                               name="name"
+                               class="cupon col ">
+                    </label>
+
+					
+					<label class="item item-input row">
+                        <span class="input-label col col-10">
+                          <img src="img/Preferencias_4.png" class="icononuevo">
+                        </span>
+                        <span class="col col-20">País:</span>
+                        
+                        <select class="item-select col col-50" ng-model="preferencias_pais" name="pais">
+                          <option value="Afghanistán"> Afghanistán</option>
+                          <option value="Alemania"> Alemania</option>
+						   <option value="Alemania"> Argentina</option>
+						   <option value="Alemania"> Estados Unidos</option>
+						   <option value="Alemania"> Venezuela</option>
+						  
+                        </select>
+                    </label>
+                    <label class="item item-input row">
+                        <span class="input-label col col-10">
+                          <img src="img/Preferencias_2.png" class="icononuevo">
+                        </span>
+                        <span class="col col-20">Moneda:</span>
+                        
+                        <select class="item-select col col-50" ng-model="preferencias_money" name="money">
+                          <option value="afghani (AFA)">afghani (AFA)</option>
+                          <option value="euro (EUR)">euro (EUR)</option>
+						  <option value="euro (EUR)">Peso Argentino (ARS) </option>
+						  <option value="euro (EUR)">Dollar USA (USD)</option>
+						 <option value="euro (EUR)">Bolivar(Bs)</option>
+						 
+						   
+                        </select>
+                    </label>
+
+                    <label class="item item-input row">
+                        <span class="input-label col col-10">
+                          <img src="img/Preferencias_3.png" class="icononuevo">
+                        </span>
+                        <input type="text"
+                               placeholder="Dirección"
+                               class="cupon"
+                               ng-model="preferencias_adress">
+                    </label>
+
+                    <label class="item item-input row">
+                        <span class="input-label col col-10">
+                          <img src="img/Preferencias_4.png" class="icononuevo">
+                        </span>
+                        <span class="col col-20">Idioma</span>
+                        <select class="select col col-60"
+                        ng-model="preferencias_languaje">
+                          <option value="Español">Español</option>
+                          <option value="Ingles">Ingles</option>
+                        </select>
+                        
+                    </label>
+
+                    <label class="item item-input row">
+                        <span class="input-label col col-10">
+                          <img src="img/Preferencias_4.png" class="icononuevo">
+                        </span>
+                        <span class="col col-20">Género</span>
+                        <select class="select col col-60"
+                        ng-model="preferencias_genero">
+                          <option value="Masculino">Masculino</option>
+                          <option value="Femenino">Femenino</option>
+                        </select>
+                        
+                    </label>
+                </div>
+                <br>  
+                <a href="principal.html">
+                <button class="button button-calm guardar center">Guardar</button>
+                </a>
+
+                <br><br>
+                
+                </form>
+                <!--<a href="index.html"><button class="button cerrar">Cerrar sesión</button></a>-->
+          </div>
+      </ion-content>
+  </body>
+</html>

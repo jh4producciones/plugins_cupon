@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+	 <!--librerias para la conexión con facebook-->
+    <script src="js/openfb.js"></script>
+    <script src="js/ngopenfb.js"></script>
+	
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  <body ng-app="starter">
+      <div class="bar bar-header bar-orange">
+        <a class="button icon-left ion-ios-arrow-thin-left button-clear" style="color:#fff;" href="principal.html"></a>
+        <h1 class="title" style="color:#FFF;">Añadir Cupón manualmente</h1>
+      </div>
+     <ion-pane>
+      <ion-content style="text-align: center;" ng-controller="AppCtrl">
+          <div class="item">
+              <br><br>
+                <form ng-submit="agregarCuponLocal()">
+                    
+               <div class="list form">
+
+               	
+
+               		<!-- Codigo del Cupon -->
+                    <label class="item item-input row">
+					
+                       <span class="input-label col col-5"><img src="img/NuevoCuponManual_9.png" class="icononuevo"></span>
+						<span class="input-label col col-5"><a href="" ng-click="buscar()" class="item item-icon-center" ><img src="img/CouponMenu_10.png" class="icononuevo"> 
+						<p align="center" style="color:#000; font-size:13px;">
+                        Buscar Cupon en el móvil</p>
+						</a> </span>	
+                        <input type="text"
+                               
+                               name="code"
+                               ng-model="coupon_code"
+                               class="cupon" required>
+						   
+                    </label>
+
+               		<!-- Descuento del Cupon -->
+
+               		<!--<label class="item item-input item-select row">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_7.png" class="icononuevo"></span>
+                        <span class="input-label col col-20">Dscto: </span>
+                        <select class="col col-40"
+                        	name="type_discount" 
+                        	ng-change="changeSelect()"
+                        	ng-model="coupon_type_discount">
+								<option value="porcentaje">porcentaje</option>
+								<option value="valor">valor</option>
+                        </select>
+                                
+                     </label>
+                    <label class="item item-input row"
+                    	ng-show="{{show_value}}">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_2.png" class="icononuevo"></span>
+                        <input 
+                        		type="number"
+                               placeholder="Valor de descuento"
+                               name="discount"
+                               ng-model="coupon_discount_p"
+                               class="cupon col col-50" required>
+                               <span>&nbsp&nbsp.&nbsp&nbsp  </span>
+                        <input type="number"
+                        		size="20" 
+                        		value="00" 
+                               placeholder="00"
+                               name="discount"
+                               ng-model="data.discount"
+                               class="cupon col col-20" required>
+                    </label>-->
+
+                  <!-- Descuento del Cupon -->
+                    <label class="item item-input row"
+                      ng-show="show_value">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_2.png" class="icononuevo"></span>
+						
+						<span class="input-label col col-8">Tipo de descuento:
+                        <select class="col-70"
+                        	name="typed"
+                        	ng-model="coupon_type">
+							<option value="proc">%</option>
+							<option value="valor">Valor</option>
+                        </select>
+						
+                        <input type="number"
+                               placeholder="Descuento"
+                               name="discount"
+                               ng-model="coupon_discount_v"
+                               class="cupon col" required>
+					    </span>
+                    </label>
+
+                  <!-- Cantidad de cupones -->
+                    <label class="item item-input row"
+                      ng-show="show_value">
+                        <span class="input-label col col-20">
+                        <img src="img/CouponMenu_6.png" class="icononuevo">
+                        </span>
+                        <input type="number"
+                               placeholder="Cantidad de cupones"
+                               name="quantity"
+                               ng-model="coupon_quantity"
+                               class="cupon col" required>
+                    </label>
+
+
+               		<!-- Fecha de caducidad del Cupon -->
+                    <label class="item item-input row">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_3.png" class="icononuevo"></span>
+                        <input type="date"
+                               placeholder="Fecha de caducidad"
+                               name="due_date"
+                               ng-model="coupon_due_date"
+                               class="cupon col" required>
+                    </label>
+
+
+               		<!-- Descripcion del Cupon -->
+                    <label class="item item-input row">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_4.png" class="icononuevo"></span>
+                        <input type="text"
+                               placeholder="Descripción"
+                               name="description"
+                               ng-model="coupon_description"
+                               class="cupon" required>
+                    </label>
+
+
+               		<!-- Tienda del Cupon -->
+                    <label class="item item-input row">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_5.png" class="icononuevo"></span>
+                        <input type="text"
+                               placeholder="Tienda"
+                               name="store_id"
+                               ng-model="coupon_store_id"
+                               class="cupon" required>
+                    </label>
+                    <!--<label class="item item-input">
+                        <span class="input-label"><img src="img/NuevoCuponManual_6.png" class="icononuevo"></span>
+                        <input type="text"
+                               placeholder="Ubicación de tienda"
+                               name="store"
+                               class="cupon"
+                               ng-model="data.store"
+                               required>
+                    </label>-->
+                   
+
+               		<!-- Tipo del Cupon -->
+                    <label class="item item-input item-select row">
+                        <span class="input-label col col-20"><img src="img/NuevoCuponManual_7.png" class="icononuevo"></span>
+                        <span class="input-label col col-10">Tipo:</span>
+                        <select class="col col-70"
+                        	name="type"
+                        	ng-model="coupon_type">
+							<option value="fabricante">Cupón de Fabricante</option>
+							<option value="tienda">Cupón de Tienda</option>
+                        </select>
+                                
+                     </label>
+                    <input type="hidden"
+                               placeholder="Tienda"
+                               value="tienda" 
+                               name="type"
+                                ng-model="data.type"
+                               class="cupon">
+                    <input type="hidden"
+                               placeholder="Tienda"
+                               value="10" 
+                               name="user_id"
+                                ng-model="data.user_id"
+                               class="cupon">
+                </div>
+                    
+                <button class="button button-calm guardar">Guardar</button>
+                </form>
+          </div>
+          
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

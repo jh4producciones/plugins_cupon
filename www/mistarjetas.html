@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <!--librerias para la conexión con facebook-->
+    <script src="js/openfb.js"></script>
+    <script src="js/ngopenfb.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+
+<body ng-app="starter" ng-controller="AppCtrl">
+<div class="bar bar-header bar-orange">
+    <a class="button icon-left ion-ios-arrow-thin-left button-clear" style="color:#fff;" href="principal.html"></a>
+    <h1 class="title" style="color:#FFF;">Mis tarjetas</h1>
+</div>
+<div class="bar bar-subheader bar-orange row" align="center">
+    <a href=""  class="col" ng-click="ordenarCuponesPor('name')">
+        <img src="img/Cupones_top_1.png" class="iconofooter icono1">
+    </a>
+    <a href=""  class="col" ng-click="ordenarCuponesPor('usado')">
+        <img src="img/Cupones_top_2.png" class="iconofooter icono2">
+    </a>
+    <a href=""  class="col" ng-click="ordenarCuponesPor('discount_p')">
+        <img src="img/Cupones_top_3.png" class="iconofooter icono3">
+    </a>
+    <a href=""  class="col" ng-click="ordenarCuponesPor('due_date')">
+        <img src="img/Cupones_top_4.png" class="iconofooter icono4">
+    </a>
+    <a href=""  class="col" ng-click="ordenarCuponesPor('store_id')">
+        <img src="img/Cupones_top_5.png" class="iconofooter icono5">
+    </a>
+    <a href=""  class="col" ng-click="ordenarCuponesPor('type')">
+        <img src="img/Cupones_top_6.png" class="iconofooter icono6">
+    </a>
+
+</div>
+<ion-pane>
+    <ion-content style="text-align: left; margin-top: 90px">
+        <!--<form ng-submit="getCouponList()" style="margin-bottom: 10px">
+          <button class="button button-calm">Actualizar</button>
+        </form>-->
+        <div class="row">
+            <span class="col">Descripción</span>
+            <span class="col">Descuento</span>
+            <span class="col">Fecha</span>
+            <span class="col">Tienda</span>
+        </div>
+        <ion-list>
+            <a href="infocupon.html">
+                <ion-item class="row" ng-repeat="tarjeta in tarjetas "
+                          ng-click="">
+                    <div class="col">{{tarjeta.description | limitTo:13}}</div>
+                    <div class="col red">- {{tarjeta.discount_v | currency : preferencias_money}}</div>
+                    <div class="col">{{tarjeta.due_date | date: shortDate}}</div>
+                    <div class="col">{{tarjeta.store_id | limitTo:13}}</div></a>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-pane>
+<div class="bar bar-footer menuhome row">
+    <div class="col col-50">
+        <a href="cupon.html">
+            <button class="button button-clear">
+                <img src="img/Cupones_bottom_1.png" class="iconofooter">
+            </button>
+        </a>
+    </div>
+
+    <div class="col col-40">
+        <a href="articulos.html">
+            <button class="button button-clear">
+                <img src="img/Cupones_bottom_2.png" class="iconofooter">
+            </button>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="mislistascompras.html">
+            <button class="button button-clear">
+                <img src="img/Cupones_bottom_3.png" class="iconofooter">
+            </button>
+        </a>
+    </div>
+</div>
+
+
+
+</body>
+</html>
